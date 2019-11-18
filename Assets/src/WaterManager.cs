@@ -7,13 +7,12 @@ namespace src
     {
         private int scaller = 1;
         public static float BaseHeight = 0;
-        public static float K = 0.01f;
-
-        int _springNum = 176;
         private WaterMesh _waterMesh;
         private WaterSpring[] _water;
+        private WaterInteraction _phys;
         private void Start()
         {
+            int _springNum = 176;
             _springNum *= scaller;
             
             float z = 0;
@@ -40,6 +39,8 @@ namespace src
 
             _waterMesh = gameObject.AddComponent<WaterMesh>();
             _waterMesh.Init(_water, _springNum, -5);
+            
+            _phys = new WaterInteraction(_water, _springNum);
         }
         
         private void SetVelocity(int i, float velocity)
@@ -64,49 +65,8 @@ namespace src
                     SetVelocity(i, -1.52f);
                 }
             }
-
-            for (int i = 0; i < _springNum; i++)
-            {
-                _water[i].Update(0.5f);
-            }
-
-            float[] leftDeltas = new float[_springNum];
-            float[] rightDeltas = new float[_springNum];
-
-            for (int k = 0; k < 6; k++)
-            {
-                for (int i = 0; i < _springNum; i++)
-                {
-//                    float koeff = 0.001f;
-                    float koeff = 0.01f;
-                    if (i > 0)
-                    {
-                        leftDeltas[i] = koeff * (_water[i].Position.y - _water[i - 1].Position.y);
-                        _water[i - 1].VelocityY += leftDeltas[i];
-                    }
-
-                    if (i < _springNum - 1)
-                    {
-                        rightDeltas[i] =  koeff* (_water[i].Position.y - _water[i + 1].Position.y);
-                        _water[i + 1].VelocityY += rightDeltas[i];
-                    }
-                }
-
-//                for (int i = 0; i < verticiesCount; i++)
-//                {
-//                    if (i > 0)
-//                    {
-//                        _water[i-1].Position += new Vector3(0, leftDeltas[i]);
-//                    }
-//
-//                    if (i < verticiesCount - 1)
-//                    {
-//                        _water[i+1].Position += new Vector3(0, leftDeltas[i]);
-//                    }
-//
-//                }
-            }
-
+            
+            _phys.UpdatePhys();
             _waterMesh.UpdateMesh();
         }
         

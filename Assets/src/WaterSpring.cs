@@ -23,7 +23,7 @@ namespace src
         public void Update(float delta)
         {
             float mass = 1.0f;
-            float accelerationY = -WaterManager.K*(_position.y - WaterManager.BaseHeight)/mass - _velocityY*0.05f;
+            float accelerationY = -WaterInteraction.K*(_position.y - WaterManager.BaseHeight)/mass - _velocityY*0.05f;
             _position.y += delta * _velocityY;
             _velocityY += delta * accelerationY;
         }
