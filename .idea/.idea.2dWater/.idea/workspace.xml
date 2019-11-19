@@ -2,7 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd8ba273-a149-4543-966b-caea37ad2bdf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Black.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Black.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Water.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Water.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/WaterData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/WaterData.cs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ColorShader.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ColorShader.shader" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Cube.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Cube.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/src/WaterInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/WaterInteraction.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/src/WaterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/WaterManager.cs" afterDir="false" />
@@ -21,23 +30,28 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/092936FD-C0C1-418D-B54A-09908CFB1CD1/74/b82fe601/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/WaterMesh.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Water.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/ColorShader.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/092936FD-C0C1-418D-B54A-09908CFB1CD1/98/063e7e58/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/WaterManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@1.1.0/Rider/Editor/EditorPluginInterop.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/WaterSpring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/WaterInteraction.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/src/WaterManager.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/WaterData.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/src/jj.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Test.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/WaterSpring.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/WaterManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/WaterInteraction.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/ColorShader.shader" />
         <option value="$PROJECT_DIR$/Assets/src/WaterMesh.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/WaterSpring.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/WaterData.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/WaterManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/WaterInteraction.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Water.cs" />
       </list>
     </option>
   </component>
@@ -92,7 +106,7 @@
       <workItem from="1573720429649" duration="1426000" />
       <workItem from="1573826375975" duration="137000" />
       <workItem from="1573826631822" duration="1917000" />
-      <workItem from="1574003485039" duration="32406000" />
+      <workItem from="1574003485039" duration="42921000" />
     </task>
     <servers />
   </component>

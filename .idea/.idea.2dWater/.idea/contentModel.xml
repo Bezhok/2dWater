@@ -22,6 +22,8 @@
           <e p="ColorShader.shader" t="Include" />
         </e>
         <e p="src" t="Include">
+          <e p="Water.cs" t="Include" />
+          <e p="WaterData.cs" t="Include" />
           <e p="WaterInteraction.cs" t="Include" />
           <e p="WaterManager.cs" t="Include" />
           <e p="WaterMesh.cs" t="Include" />

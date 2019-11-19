@@ -19,6 +19,7 @@ SubShader {
 
 		void surf (Input IN, inout SurfaceOutput o) {
 			o.Albedo = IN.vertColor.rgb;
+			//o.alpha = IN.vertColor.a;
 		}
 		ENDCG
 	}
