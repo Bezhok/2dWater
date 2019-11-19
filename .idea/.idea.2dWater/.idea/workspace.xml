@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd8ba273-a149-4543-966b-caea37ad2bdf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/src/WaterInteraction.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/src/WaterInteraction.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/WaterInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/WaterInteraction.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/src/WaterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/WaterManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/WaterMesh.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/WaterMesh.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/src/WaterSpring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/WaterSpring.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -20,23 +19,25 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/092936FD-C0C1-418D-B54A-09908CFB1CD1/74/b82fe601/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/WaterMesh.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/ColorShader.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@1.1.0/Rider/Editor/EditorPluginInterop.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/WaterSpring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/WaterInteraction.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/WaterManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/src/jj.cs" />
-        <option value="$PROJECT_DIR$/Assets/Resources/ColorShader.shader" />
         <option value="$PROJECT_DIR$/Assets/src/Test.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/WaterMesh.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/WaterInteraction.cs" />
         <option value="$PROJECT_DIR$/Assets/src/WaterSpring.cs" />
         <option value="$PROJECT_DIR$/Assets/src/WaterManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/WaterInteraction.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/ColorShader.shader" />
+        <option value="$PROJECT_DIR$/Assets/src/WaterMesh.cs" />
       </list>
     </option>
   </component>
@@ -47,6 +48,7 @@
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
     <property name="Rider.ProjectViewActivator.IsNotFirstRun" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -90,7 +92,7 @@
       <workItem from="1573720429649" duration="1426000" />
       <workItem from="1573826375975" duration="137000" />
       <workItem from="1573826631822" duration="1917000" />
-      <workItem from="1574003485039" duration="23007000" />
+      <workItem from="1574003485039" duration="32406000" />
     </task>
     <servers />
   </component>

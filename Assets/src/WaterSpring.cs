@@ -4,28 +4,15 @@ namespace src
 {
     public class WaterSpring
     {
-        private Vector3 _position;
-
-        public Vector3 Position
-        {
-            get => _position;
-            set => _position = value;
-        }
-
-        private float _velocityY;
-
-        public float VelocityY
-        {
-            get => _velocityY;
-            set => _velocityY = value;
-        }
+        public Vector3 Position;
+        public float VelocityY { get; set; }
 
         public void Update(float delta)
         {
             float mass = 1.0f;
-            float accelerationY = -WaterInteraction.K*(_position.y - WaterManager.BaseHeight)/mass - _velocityY*0.05f;
-            _position.y += delta * _velocityY;
-            _velocityY += delta * accelerationY;
+            float accelerationY = -WaterInteraction.K*(Position.y - WaterManager.BaseHeight)/mass - VelocityY*0.05f;
+            Position.y += delta * VelocityY;
+            VelocityY += delta * accelerationY;
         }
     }
 }

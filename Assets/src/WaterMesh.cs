@@ -71,8 +71,8 @@ namespace src
                     ebo[eboIdx+k] = vertIdx+eboTemplate[k];
                 }
 
-                colors[vertIdx] = colors[vertIdx+2] = Color.cyan;
-                colors[vertIdx + 1] = colors[vertIdx + 3] = Color.blue;
+                colors[vertIdx] = colors[vertIdx+2] = new Color(0, 1, 1, 1);
+                colors[vertIdx + 1] = colors[vertIdx + 3] = new Color(0, 0, 1, 1);
             }
 
             _mesh.vertices = vertices;
