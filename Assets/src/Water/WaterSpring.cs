@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace src
+namespace src.Water
 {
     public class WaterSpring
     {

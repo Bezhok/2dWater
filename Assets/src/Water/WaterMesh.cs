@@ -1,15 +1,16 @@
-﻿using UnityEngine;
+﻿using src.Factory;
+using UnityEngine;
 
-namespace src
+namespace src.Water
 {
-    public class WaterMesh : MonoBehaviour
+    public class WaterMesh : MonoBehaviour, IInitializable
     {
         private WaterData _waterData;
         private Mesh _mesh;
 
-        public void Init(WaterData waterData)
+        public void Init(IData waterData)
         {
-            _waterData = waterData;
+            _waterData = waterData as WaterData;
 
             var meshRenderer = gameObject.AddComponent<MeshRenderer>();
             meshRenderer.material = Resources.Load<Material>("Materials/Default");

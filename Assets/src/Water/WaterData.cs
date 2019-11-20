@@ -1,6 +1,8 @@
-﻿namespace src
+﻿using src.Factory;
+
+namespace src.Water
 {
-    public class WaterData
+    public class WaterData : IData
     {
         public float Step { get; set; }
         public float BaseHeight { get; set; }

@@ -2,21 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd8ba273-a149-4543-966b-caea37ad2bdf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Black.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Black.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/src/Water.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/src/Water.cs.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/src/WaterData.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/src/WaterData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Factory.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/Factory.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/IData.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/IData.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/IInitializable.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/src/IInitializable.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ColorShader.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ColorShader.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Cube.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Cube.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Water.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Water.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/WaterData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/WaterData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/src/WaterInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/WaterInteraction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/WaterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/WaterManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/src/WaterMesh.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/WaterMesh.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/WaterSpring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/WaterSpring.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -30,11 +27,14 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/092936FD-C0C1-418D-B54A-09908CFB1CD1/74/b82fe601/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/WaterMesh.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/IInitializable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Water.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Resources/ColorShader.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/Factory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/092936FD-C0C1-418D-B54A-09908CFB1CD1/98/063e7e58/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/WaterManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="mock:///Dummy.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/src/IData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@1.1.0/Rider/Editor/EditorPluginInterop.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/WaterSpring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/WaterInteraction.cs" root0="FORCE_HIGHLIGHTING" />
@@ -46,12 +46,15 @@
         <option value="$PROJECT_DIR$/Assets/src/jj.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Test.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/ColorShader.shader" />
-        <option value="$PROJECT_DIR$/Assets/src/WaterMesh.cs" />
         <option value="$PROJECT_DIR$/Assets/src/WaterSpring.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/WaterData.cs" />
         <option value="$PROJECT_DIR$/Assets/src/WaterManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/WaterInteraction.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Data.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/WaterData.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/IInitializable.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Factory.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/WaterMesh.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Water.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/WaterInteraction.cs" />
       </list>
     </option>
   </component>
@@ -77,10 +80,10 @@
     </option>
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="10044">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="972">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="10044" />
+      <option name="pid" value="972" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -106,7 +109,7 @@
       <workItem from="1573720429649" duration="1426000" />
       <workItem from="1573826375975" duration="137000" />
       <workItem from="1573826631822" duration="1917000" />
-      <workItem from="1574003485039" duration="42921000" />
+      <workItem from="1574003485039" duration="50322000" />
     </task>
     <servers />
   </component>

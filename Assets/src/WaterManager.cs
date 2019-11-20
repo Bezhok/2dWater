@@ -14,7 +14,7 @@ namespace src
                 throw new NullReferenceException();
             }
 
-            new GameObject().AddComponent<Water>();
+            new GameObject().AddComponent<Water.Water>();
         }
 
         private void Update()

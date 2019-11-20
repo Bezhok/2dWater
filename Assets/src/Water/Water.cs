@@ -1,7 +1,8 @@
 ﻿using System;
+using src.Factory;
 using UnityEngine;
 
-namespace src
+namespace src.Water
 {
     public class Water : MonoBehaviour
     {
@@ -26,11 +27,8 @@ namespace src
                 _waterData.WaterSprings[i].Position = pos;
             }
 
-            _waterData.Mesh = gameObject.AddComponent<WaterMesh>();
-            _waterData.Mesh.Init(_waterData);
-
-            _waterData.Phys = gameObject.AddComponent<WaterInteraction>();
-            _waterData.Phys.Init(_waterData);
+            _waterData.Mesh = Factory<WaterMesh>.CreateInstance(gameObject, _waterData);
+            _waterData.Phys = Factory<WaterInteraction>.CreateInstance(gameObject, _waterData);
         }
         
         private void Update()

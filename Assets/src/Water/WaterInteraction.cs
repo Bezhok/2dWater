@@ -1,24 +1,25 @@
 ﻿using System;
+using src.Factory;
 using UnityEngine;
 
-namespace src
+namespace src.Water
 {
-    public class WaterInteraction : MonoBehaviour
+    public class WaterInteraction : MonoBehaviour, IInitializable
     {
         private WaterData _waterData;
         private EdgeCollider2D _edgeCollider2D;
 
-        public void Init(WaterData waterData)
+        public void Init(IData waterData)
         {
-            _waterData = waterData;
+            _waterData = waterData as WaterData;
 
             _edgeCollider2D = gameObject.AddComponent<EdgeCollider2D>();
-            Vector2[] points = new Vector2[waterData.SpringNum];
-            for (int i = 0; i < waterData.SpringNum; i++)
+            Vector2[] points = new Vector2[_waterData.SpringNum];
+            for (int i = 0; i < _waterData.SpringNum; i++)
             {
-                points[i] = waterData.WaterSprings[i].Position;
+                points[i] = _waterData.WaterSprings[i].Position;
             }
-
+            
             _edgeCollider2D.points = points;
             _edgeCollider2D.isTrigger = true;
         }
@@ -38,6 +39,7 @@ namespace src
                 int endI = Math.Min(_waterData.WaterSprings.Length - 1,
                     (int) ((end - _waterData.WaterSprings[0].Position.x) / _waterData.Step));
 
+                // todo update collider points or interpolate
                 float velocityY = rigidbody.velocity.y * rigidbody.mass / 20f;
                 for (int j = startI; j < endI; j++)
                 {
