@@ -2,28 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd8ba273-a149-4543-966b-caea37ad2bdf" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/ColorShader.shader" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/ColorShader.shader" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Factory.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/FactoryPattern.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Factory/Factory.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/FactoryPattern/Factory.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Factory/Factory.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/FactoryPattern/Factory.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Factory/IData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/FactoryPattern/IData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Factory/IData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/FactoryPattern/IData.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Factory/IInitializable.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/FactoryPattern/IInitializable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Factory/IInitializable.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/FactoryPattern/IInitializable.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Water.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Liquids.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Water/Water.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Liquids/Water.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Water/Water.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Liquids/Water.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Water/WaterData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Liquids/WaterData.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Water/WaterData.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Liquids/WaterData.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Water/WaterInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Liquids/WaterInteraction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Water/WaterInteraction.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Liquids/WaterInteraction.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Water/WaterMesh.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Liquids/WaterMesh.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Water/WaterMesh.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Liquids/WaterMesh.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Water/WaterSpring.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Liquids/WaterSpring.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Water/WaterSpring.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Liquids/WaterSpring.cs.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/WaterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/WaterManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Liquids/WaterInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Liquids/WaterInteraction.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -73,9 +53,9 @@
         <option value="$PROJECT_DIR$/Assets/src/Liquids/WaterData.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Liquids/WaterMesh.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/ColorShader.shader" />
+        <option value="$PROJECT_DIR$/Assets/src/Liquids/Water.cs" />
         <option value="$PROJECT_DIR$/Assets/src/WaterManager.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Liquids/WaterInteraction.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Liquids/Water.cs" />
       </list>
     </option>
   </component>
@@ -132,7 +112,7 @@
       <workItem from="1573826631822" duration="1917000" />
       <workItem from="1574003485039" duration="52036000" />
       <workItem from="1574423716914" duration="7532000" />
-      <workItem from="1574666248414" duration="6385000" />
+      <workItem from="1574666248414" duration="10006000" />
     </task>
     <servers />
   </component>

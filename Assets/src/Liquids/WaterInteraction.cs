@@ -14,12 +14,12 @@ namespace src.Liquids
             _waterData = waterData as WaterData;
 
             _edgeCollider2D = gameObject.AddComponent<EdgeCollider2D>();
-            Vector2[] points = new Vector2[_waterData.SpringNum];
-            for (int i = 0; i < _waterData.SpringNum; i++)
-            {
-                points[i] = _waterData.WaterSprings[i].Position;
-            }
-            
+            Vector2[] points = new Vector2[2];
+
+            points[0] = _waterData.WaterSprings[0].Position;
+            points[1] = _waterData.WaterSprings[_waterData.WaterSprings.Length - 1].Position;
+
+
             _edgeCollider2D.points = points;
             _edgeCollider2D.isTrigger = true;
         }
@@ -33,12 +33,14 @@ namespace src.Liquids
                 var localScale = rigidbody.transform.localScale;
                 float start = transformPosition.x - localScale.x / 2;
                 float end = transformPosition.x + localScale.x / 2;
-
-
-                int startI = Math.Max(0, (int) ((start - _waterData.WaterSprings[0].Position.x) / _waterData.Step));
-                int endI = Math.Min(_waterData.WaterSprings.Length - 1,
-                    (int) ((end - _waterData.WaterSprings[0].Position.x) / _waterData.Step));
                 
+                float globalStartPosX = transform.TransformPoint(_waterData.WaterSprings[0].Position).x;
+                float globalScaleX = _waterData.Step * transform.localScale.x;
+
+                int startI = Math.Max(0, (int) ((start - globalStartPosX) / globalScaleX));
+                int endI = Math.Min(_waterData.WaterSprings.Length - 1,
+                    (int) ((end - globalStartPosX) / globalScaleX));
+
                 // todo update collider points or interpolate
                 float velocityY = rigidbody.velocity.y * rigidbody.mass / 20f;
                 for (int j = startI; j < endI; j++)
@@ -58,7 +60,7 @@ namespace src.Liquids
             float scaller = 2;
             for (int i = 0; i < _waterData.SpringNum; i++)
             {
-                _waterData.WaterSprings[i].Update(0.5f*scaller, _waterData.BaseHeight, _waterData.K);
+                _waterData.WaterSprings[i].Update(0.5f * scaller, _waterData.BaseHeight, _waterData.K);
             }
 
             for (int i = 0; i < _waterData.SpringNum; i++)
@@ -78,15 +80,6 @@ namespace src.Liquids
                     _waterData.WaterSprings[i + 1].VelocityY += rightDelta;
                 }
             }
-            
-                        
-            Vector2[] points = _edgeCollider2D.points;
-            for (int i = 0; i < _waterData.SpringNum; i++)
-            {
-                points[i] = _waterData.WaterSprings[i].Position;
-            }
-            
-            _edgeCollider2D.points = points;
         }
 
         public void UpdatePhysExperimental()
@@ -132,14 +125,6 @@ namespace src.Liquids
                     }
                 }
             }
-
-            Vector2[] points = _edgeCollider2D.points;
-            for (int i = 0; i < _waterData.SpringNum; i++)
-            {
-                points[i] = _waterData.WaterSprings[i].Position;
-            }
-            
-            _edgeCollider2D.points = points;
         }
     }
 }
