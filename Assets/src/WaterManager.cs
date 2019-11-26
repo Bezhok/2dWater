@@ -8,6 +8,7 @@ namespace src
     public class WaterManager : MonoBehaviour
     {
         [SerializeField] private GameObject cubePrefab;
+
         private WaterData waterData;
         private void Start()
         {

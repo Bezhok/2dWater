@@ -57,7 +57,7 @@ namespace src.Liquids
 
         public void UpdatePhys()
         {
-            float scaller = 2;
+            float scaller = 3;
             for (int i = 0; i < _waterData.SpringNum; i++)
             {
                 _waterData.WaterSprings[i].Update(0.5f * scaller, _waterData.BaseHeight, _waterData.K);
