@@ -1,8 +1,8 @@
 ﻿using System;
-using src.Factory;
+using src.FactoryPattern;
 using UnityEngine;
 
-namespace src.Water
+namespace src.Liquids
 {
     public class WaterInteraction : MonoBehaviour, IInitializable
     {
@@ -38,7 +38,7 @@ namespace src.Water
                 int startI = Math.Max(0, (int) ((start - _waterData.WaterSprings[0].Position.x) / _waterData.Step));
                 int endI = Math.Min(_waterData.WaterSprings.Length - 1,
                     (int) ((end - _waterData.WaterSprings[0].Position.x) / _waterData.Step));
-
+                
                 // todo update collider points or interpolate
                 float velocityY = rigidbody.velocity.y * rigidbody.mass / 20f;
                 for (int j = startI; j < endI; j++)
@@ -55,14 +55,15 @@ namespace src.Water
 
         public void UpdatePhys()
         {
+            float scaller = 2;
             for (int i = 0; i < _waterData.SpringNum; i++)
             {
-                _waterData.WaterSprings[i].Update(0.5f, _waterData.BaseHeight, _waterData.K);
+                _waterData.WaterSprings[i].Update(0.5f*scaller, _waterData.BaseHeight, _waterData.K);
             }
 
             for (int i = 0; i < _waterData.SpringNum; i++)
             {
-                float koeff = 0.06f / 10f / _waterData.Step;
+                float koeff = scaller * 0.09f / 10f / _waterData.Step;
                 if (i > 0)
                 {
                     float leftDelta = koeff * (_waterData.WaterSprings[i].Position.y -
@@ -77,6 +78,15 @@ namespace src.Water
                     _waterData.WaterSprings[i + 1].VelocityY += rightDelta;
                 }
             }
+            
+                        
+            Vector2[] points = _edgeCollider2D.points;
+            for (int i = 0; i < _waterData.SpringNum; i++)
+            {
+                points[i] = _waterData.WaterSprings[i].Position;
+            }
+            
+            _edgeCollider2D.points = points;
         }
 
         public void UpdatePhysExperimental()
@@ -93,7 +103,7 @@ namespace src.Water
             {
                 for (int i = 0; i < _waterData.SpringNum; i++)
                 {
-                    float koeff = 0.001f;
+                    float koeff = 0.005f;
                     if (i > 0)
                     {
                         leftDeltas[i] = koeff * (_waterData.WaterSprings[i].Position.y -
@@ -113,15 +123,23 @@ namespace src.Water
                 {
                     if (i > 0)
                     {
-                        _waterData.WaterSprings[i - 1].Position += new UnityEngine.Vector3(0, leftDeltas[i]);
+                        _waterData.WaterSprings[i - 1].Position += new Vector3(0, leftDeltas[i]);
                     }
 
                     if (i < _waterData.SpringNum - 1)
                     {
-                        _waterData.WaterSprings[i + 1].Position += new UnityEngine.Vector3(0, leftDeltas[i]);
+                        _waterData.WaterSprings[i + 1].Position += new Vector3(0, leftDeltas[i]);
                     }
                 }
             }
+
+            Vector2[] points = _edgeCollider2D.points;
+            for (int i = 0; i < _waterData.SpringNum; i++)
+            {
+                points[i] = _waterData.WaterSprings[i].Position;
+            }
+            
+            _edgeCollider2D.points = points;
         }
     }
 }

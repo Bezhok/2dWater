@@ -1,4 +1,4 @@
-﻿namespace src.Factory
+﻿namespace src.FactoryPattern
 {
     public interface IInitializable
     {

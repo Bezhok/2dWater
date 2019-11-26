@@ -1,7 +1,7 @@
-﻿using src.Factory;
+﻿using src.FactoryPattern;
 using UnityEngine;
 
-namespace src.Water
+namespace src.Liquids
 {
     public class WaterMesh : MonoBehaviour, IInitializable
     {
@@ -22,17 +22,17 @@ namespace src.Water
         public void UpdateMesh()
         {
             Vector3[] vertices = _mesh.vertices;
-            for (int i = 0, j = 0; j < _waterData.SpringNum - 1; i += 4, j++)
+            for (int vertIdx = 0, springIdx = 0; springIdx < _waterData.SpringNum - 1; vertIdx += 4, springIdx++)
             {
-                var pos = _waterData.WaterSprings[j].Position;
-                vertices[i] = pos;
+                var pos = _waterData.WaterSprings[springIdx].Position;
+                vertices[vertIdx] = pos;
                 pos.y = _waterData.Bottom;
-                vertices[i + 1] = pos;
+                vertices[vertIdx + 1] = pos;
 
-                pos = _waterData.WaterSprings[j + 1].Position;
-                vertices[i + 2] = pos;
+                pos = _waterData.WaterSprings[springIdx + 1].Position;
+                vertices[vertIdx + 2] = pos;
                 pos.y = _waterData.Bottom;
-                vertices[i + 3] = pos;
+                vertices[vertIdx + 3] = pos;
             }
 
             _mesh.vertices = vertices;

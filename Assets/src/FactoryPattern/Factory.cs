@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace src.Factory
+namespace src.FactoryPattern
 {
     public class Factory<T> where T : MonoBehaviour, IInitializable
     {

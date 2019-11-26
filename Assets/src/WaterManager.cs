@@ -1,4 +1,6 @@
 ﻿using System;
+using src.FactoryPattern;
+using src.Liquids;
 using UnityEngine;
 
 namespace src
@@ -6,7 +8,7 @@ namespace src
     public class WaterManager : MonoBehaviour
     {
         [SerializeField] private GameObject cubePrefab;
-
+        private WaterData waterData;
         private void Start()
         {
             if (cubePrefab == null)
@@ -14,7 +16,22 @@ namespace src
                 throw new NullReferenceException();
             }
 
-            new GameObject().AddComponent<Water.Water>();
+            {
+                float height = 5f;
+                var water = new GameObject("Screen water");
+                float K = 0.01f;
+  
+                var halfheight = Camera.main.orthographicSize;
+                var halfWidth = halfheight * Screen.width / Screen.height;
+
+                float width = halfWidth * 2;
+
+
+                var waterData = new WaterData(width, height, K);
+                Factory<Water>.CreateInstance(water, waterData);
+                water.transform.position = new Vector3(0, -2.5f);
+            }
+            
         }
 
         private void Update()
