@@ -13,7 +13,7 @@ namespace src.Liquids
         public void Init(IData data)
         {
             _waterData = data as WaterData;
-            splashPrefab = Resources.Load<GameObject>("Prefabs\\Splash");
+            splashPrefab = Resources.Load<GameObject>("Prefabs\\SplashNew");
             for (int i = 0; i < _waterData.SpringNum; i++)
             {
                 _waterData.WaterSprings[i] = new WaterSpring();

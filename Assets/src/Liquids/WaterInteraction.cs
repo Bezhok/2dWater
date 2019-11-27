@@ -57,27 +57,31 @@ namespace src.Liquids
 
         public void UpdatePhys()
         {
-            float scaller = 3;
-            for (int i = 0; i < _waterData.SpringNum; i++)
-            {
-                _waterData.WaterSprings[i].Update(0.5f * scaller, _waterData.BaseHeight, _waterData.K);
-            }
+            float scaller = 1;//3;
 
-            for (int i = 0; i < _waterData.SpringNum; i++)
+            for (int k = 0; k < 4; ++k)
             {
-                float koeff = scaller * 0.09f / 10f / _waterData.Step;
-                if (i > 0)
+                for (int i = 0; i < _waterData.SpringNum; i++)
                 {
-                    float leftDelta = koeff * (_waterData.WaterSprings[i].Position.y -
-                                               _waterData.WaterSprings[i - 1].Position.y);
-                    _waterData.WaterSprings[i - 1].VelocityY += leftDelta;
+                    _waterData.WaterSprings[i].Update(0.5f * scaller, _waterData.BaseHeight, _waterData.K);
                 }
 
-                if (i < _waterData.SpringNum - 1)
+                for (int i = 0; i < _waterData.SpringNum; i++)
                 {
-                    float rightDelta = koeff * (_waterData.WaterSprings[i].Position.y -
-                                                _waterData.WaterSprings[i + 1].Position.y);
-                    _waterData.WaterSprings[i + 1].VelocityY += rightDelta;
+                    float koeff = scaller * 0.09f / 10f / _waterData.Step;
+                    if (i > 0)
+                    {
+                        float leftDelta = koeff * (_waterData.WaterSprings[i].Position.y -
+                                                   _waterData.WaterSprings[i - 1].Position.y);
+                        _waterData.WaterSprings[i - 1].VelocityY += leftDelta;
+                    }
+
+                    if (i < _waterData.SpringNum - 1)
+                    {
+                        float rightDelta = koeff * (_waterData.WaterSprings[i].Position.y -
+                                                    _waterData.WaterSprings[i + 1].Position.y);
+                        _waterData.WaterSprings[i + 1].VelocityY += rightDelta;
+                    }
                 }
             }
         }

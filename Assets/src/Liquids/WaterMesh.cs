@@ -71,8 +71,8 @@ namespace src.Liquids
                     ebo[eboIdx + k] = vertIdx + eboTemplate[k];
                 }
 
-                colors[vertIdx] = colors[vertIdx + 2] = new Color(0, 1, 1, 0.5f);
-                colors[vertIdx + 1] = colors[vertIdx + 3] = new Color(0.2f, 0.1f, 0.99f, 0.5f);
+                colors[vertIdx] = colors[vertIdx + 2] = new Color(0, 1, 1, 0.6f);
+                colors[vertIdx + 1] = colors[vertIdx + 3] = new Color(0.2f, 0.1f, 0.99f, 0.8f);
             }
 
             _mesh.vertices = vertices;

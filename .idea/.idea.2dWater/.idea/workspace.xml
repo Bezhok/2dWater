@@ -2,17 +2,38 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dd8ba273-a149-4543-966b-caea37ad2bdf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Drop.mat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Drop.mat.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Splash.prefab" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Splash.prefab.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Sprites.meta" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/drop.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/drop.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/colorShader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/colorShader/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/colorShader/Editor/Standard_VCShaderGUI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/colorShader/Editor/Standard_VCShaderGUI.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/colorShader/Standard_VC.shader" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/colorShader/Standard_VC.shader.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/colorShader/UnityStandardCoreForwardSimple_VC.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/colorShader/UnityStandardCoreForwardSimple_VC.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/colorShader/UnityStandardCoreForward_VC.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/colorShader/UnityStandardCoreForward_VC.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/colorShader/UnityStandardCore_VC.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/colorShader/UnityStandardCore_VC.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/colorShader/UnityStandardInput_VC.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/colorShader/UnityStandardInput_VC.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/colorShader/UnityStandardMeta_VC.cginc" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/colorShader/UnityStandardMeta_VC.cginc.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/colorShader/VertexColour.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Plugins/colorShader/VertexColour.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/SplashNew.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/SplashNew.prefab.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ColorShader.shader" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/ColorShader.shader.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materials/Default.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Default.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Materials/Drop.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Materials/Drop.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Cube.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Cube.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Sprites/drop.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Sprites/drop.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/src/Liquids/Water.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Liquids/Water.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/src/Liquids/WaterInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Liquids/WaterInteraction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/WaterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/WaterManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Liquids/WaterMesh.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Liquids/WaterMesh.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,11 +46,11 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/092936FD-C0C1-418D-B54A-09908CFB1CD1/74/b82fe601/MonoBehaviour.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/colorShader/Standard_VC.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Liquids/WaterMesh.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/FactoryPattern/IInitializable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2EFDC780-086B-47F2-8399-FD0CE7A4BFA4/c1/a830d0cd/SendMouseEvents.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Liquids/Water.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Resources/ColorShader.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/FactoryPattern/Factory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/092936FD-C0C1-418D-B54A-09908CFB1CD1/98/063e7e58/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/WaterManager.cs" root0="FORCE_HIGHLIGHTING" />
@@ -38,6 +59,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@1.1.0/Rider/Editor/EditorPluginInterop.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Liquids/WaterSpring.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Liquids/WaterInteraction.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Plugins/colorShader/UnityStandardCore_VC.cginc" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Liquids/WaterData.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -60,11 +82,12 @@
         <option value="$PROJECT_DIR$/Assets/src/Water/Water.cs" />
         <option value="$PROJECT_DIR$/Assets/src/FactoryPattern/Factory.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Liquids/WaterData.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Liquids/WaterMesh.cs" />
-        <option value="$PROJECT_DIR$/Assets/Resources/ColorShader.shader" />
-        <option value="$PROJECT_DIR$/Assets/src/Liquids/WaterInteraction.cs" />
         <option value="$PROJECT_DIR$/Assets/src/WaterManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Resources/ColorShader.shader" />
+        <option value="$PROJECT_DIR$/Assets/Plugins/colorShader/Standard_VC.shader" />
+        <option value="$PROJECT_DIR$/Assets/src/Liquids/WaterMesh.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Liquids/Water.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Liquids/WaterInteraction.cs" />
       </list>
     </option>
   </component>
@@ -124,7 +147,7 @@
       <workItem from="1573826631822" duration="1917000" />
       <workItem from="1574003485039" duration="52036000" />
       <workItem from="1574423716914" duration="7532000" />
-      <workItem from="1574666248414" duration="17530000" />
+      <workItem from="1574666248414" duration="23786000" />
     </task>
     <servers />
   </component>
