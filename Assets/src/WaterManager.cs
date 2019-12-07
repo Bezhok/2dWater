@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using src.FactoryPattern;
 using src.Liquids;
 using UnityEngine;
@@ -10,6 +12,7 @@ namespace src
         [SerializeField] private GameObject cubePrefab;
 
         private WaterData waterData;
+        private List<GameObject> objs = new List<GameObject>();
         private void Start()
         {
             if (cubePrefab == null)
@@ -43,6 +46,7 @@ namespace src
                 var position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                 position = new Vector3(position.x, position.y, 5);
                 obj.transform.position = position;
+                objs.Add(obj);
             }
         }
     }

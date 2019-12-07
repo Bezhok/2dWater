@@ -17,7 +17,7 @@ namespace src.Liquids
             for (int i = 0; i < _waterData.SpringNum; i++)
             {
                 _waterData.WaterSprings[i] = new WaterSpring();
-                var pos = new Vector3(_waterData.Step * i + _waterData.Start, _waterData.BaseHeight);
+                var pos = new Vector3(_waterData.Step * i + _waterData.Left, _waterData.Top);
                 _waterData.WaterSprings[i].Position = pos;
             }
 
@@ -48,7 +48,7 @@ namespace src.Liquids
 
                 float velocityY = rigidbody.velocity.y;
                 var splashobj = Instantiate(splashPrefab);
-                splashobj.transform.position = new Vector3(bottomX, bottomY-Mathf.Abs(velocityY)*0.08f*transform.localScale.y, 10);
+                splashobj.transform.position = new Vector3(bottomX, bottomY-Mathf.Abs(velocityY)*0.04f*transform.localScale.y, 10);
                 
                 var particles = splashobj.GetComponent<ParticleSystem>();
                 particles.transform.localScale = transform.localScale;
@@ -58,7 +58,9 @@ namespace src.Liquids
                 main.startSpeed = 2 + Mathf.Abs(velocityY)*0.5f;
                 main.startLifetime = lifetime;
                 var particlesEmission = particles.emission;
-                particlesEmission.rateOverTime = 2 + Mathf.Abs(velocityY)*2;
+                int particleCount = (int)Mathf.Abs(velocityY) * 2;
+                particlesEmission.SetBurst(0, new ParticleSystem.Burst(0, particleCount, 1, 0.01f));
+//                particlesEmission.rateOverTime = 2 + Mathf.Abs(velocityY)*2;
                 
                 
                 particles.Play();
