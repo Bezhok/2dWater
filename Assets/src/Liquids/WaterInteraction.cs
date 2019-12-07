@@ -84,11 +84,14 @@ namespace src.Liquids
                     var x = rigidbodyVelocity.x/2;
                     float archimedesForce = 10.8f / rigidbody.mass * Time.deltaTime;
                     float resistance = rigidbodyVelocity.y * 0.01f;
+
+                    float waterTop = gameObject.transform.position.y + _waterData.Top;
+                    float deadZoneLen = 0.05f;
                     
                     //todo local to world position
-                    if (rigidbody.transform.position.y >= gameObject.transform.position.y + _waterData.Top)
+                    if (rigidbody.transform.position.y >= waterTop + deadZoneLen)
                     {
-                        if (Mathf.Abs(rigidbodyVelocity.y) > 0.1f)
+                        if (Mathf.Abs(rigidbodyVelocity.y) > 0.18f)
                         {
                             rigidbodyVelocity = new Vector2(x,
                                 rigidbodyVelocity.y + archimedesForce / 4);
@@ -97,6 +100,20 @@ namespace src.Liquids
                         else
                         {
                             rigidbodyVelocity = new Vector2(x, 0);   
+                        }
+                    } else if (rigidbody.transform.position.y < waterTop + deadZoneLen && 
+                               rigidbody.transform.position.y > waterTop - deadZoneLen)
+                    {
+                        if (Mathf.Abs(rigidbodyVelocity.y) < 0.18f)
+                        {
+                            rigidbodyVelocity = new Vector2(x, 0);
+                            rigidbody.Sleep();
+                        }
+                        else
+                        {
+                            rigidbodyVelocity = new Vector2(x,
+                                rigidbodyVelocity.y + archimedesForce / 2);
+                            rigidbodyVelocity = new Vector2(x, rigidbodyVelocity.y / 1.05f);
                         }
                     }
                     else

@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="dd8ba273-a149-4543-966b-caea37ad2bdf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/Cube.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/Cube.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Liquids/Water.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Liquids/Water.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/Liquids/WaterData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Liquids/WaterData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/sphere.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/sphere.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/src/Liquids/WaterInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Liquids/WaterInteraction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/src/WaterManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/WaterManager.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -125,7 +121,7 @@
       <workItem from="1574423716914" duration="7532000" />
       <workItem from="1574666248414" duration="27936000" />
       <workItem from="1575120151540" duration="23264000" />
-      <workItem from="1575727062512" duration="603000" />
+      <workItem from="1575727062512" duration="6447000" />
     </task>
     <servers />
   </component>
