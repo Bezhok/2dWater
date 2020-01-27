@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="dd8ba273-a149-4543-966b-caea37ad2bdf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Resources/Prefabs/sphere.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Resources/Prefabs/sphere.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/src/Liquids/WaterInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Liquids/WaterInteraction.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -22,10 +23,12 @@
     <setting file="file://$PROJECT_DIR$/Assets/src/FactoryPattern/IInitializable.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/2EFDC780-086B-47F2-8399-FD0CE7A4BFA4/c1/a830d0cd/SendMouseEvents.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Liquids/Water.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/FactoryPattern/Factory.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/092936FD-C0C1-418D-B54A-09908CFB1CD1/98/063e7e58/GameObject.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/WaterManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/8FEE2FC0-89A3-4DB8-92F9-1E5FE3ABE5AD/61/88da6ef6/NativeInputSystem.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/FactoryPattern/IData.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.ide.rider@1.1.0/Rider/Editor/EditorPluginInterop.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/src/Liquids/WaterSpring.cs" root0="FORCE_HIGHLIGHTING" />
@@ -56,10 +59,10 @@
         <option value="$PROJECT_DIR$/Assets/Resources/ColorShader.shader" />
         <option value="$PROJECT_DIR$/Assets/Plugins/colorShader/Standard_VC.shader" />
         <option value="$PROJECT_DIR$/Assets/src/Liquids/WaterMesh.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Liquids/Water.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Liquids/WaterData.cs" />
         <option value="$PROJECT_DIR$/Assets/src/WaterManager.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Liquids/WaterInteraction.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Liquids/Water.cs" />
       </list>
     </option>
   </component>
@@ -88,10 +91,10 @@
     </option>
   </component>
   <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor &amp; Play">
-    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="2884">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" pid="23488">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" value="2884" />
+      <option name="pid" value="23488" />
       <option name="userSelectedPid" value="false" />
       <method v="2" />
     </configuration>
@@ -121,7 +124,11 @@
       <workItem from="1574423716914" duration="7532000" />
       <workItem from="1574666248414" duration="27936000" />
       <workItem from="1575120151540" duration="23264000" />
-      <workItem from="1575727062512" duration="6447000" />
+      <workItem from="1575727062512" duration="10563000" />
+      <workItem from="1576087952293" duration="5268000" />
+      <workItem from="1576338929346" duration="2356000" />
+      <workItem from="1577175786982" duration="599000" />
+      <workItem from="1580118206607" duration="715000" />
     </task>
     <servers />
   </component>
