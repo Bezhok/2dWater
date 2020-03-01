@@ -24,13 +24,13 @@ namespace src.Liquids
             Vector3[] vertices = _mesh.vertices;
             for (int vertIdx = 0, springIdx = 0; springIdx < _waterData.SpringNum - 1; vertIdx += 4, springIdx++)
             {
-                var pos = _waterData.WaterSprings[springIdx].Position;
+                var pos = _waterData.WaterSprings[springIdx].position;
                 vertices[vertIdx] = pos;
                 
                 pos.y = _waterData.Bottom;
                 vertices[vertIdx + 1] = pos;
 
-                pos = _waterData.WaterSprings[springIdx + 1].Position;
+                pos = _waterData.WaterSprings[springIdx + 1].position;
                 vertices[vertIdx + 2] = pos;
                 
                 pos.y = _waterData.Bottom;
@@ -54,13 +54,13 @@ namespace src.Liquids
                 springIdx < _waterData.SpringNum - 1;
                 vertIdx += 4, eboIdx += eboTemplate.Length, springIdx++)
             {
-                var pos = _waterData.WaterSprings[springIdx].Position;
+                var pos = _waterData.WaterSprings[springIdx].position;
                 vertices[vertIdx] = pos;
                 
                 pos.y = _waterData.Bottom;
                 vertices[vertIdx + 1] = pos;
 
-                pos = _waterData.WaterSprings[springIdx + 1].Position;
+                pos = _waterData.WaterSprings[springIdx + 1].position;
                 vertices[vertIdx + 2] = pos;
                 
                 pos.y = _waterData.Bottom;

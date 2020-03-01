@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using src.FactoryPattern;
 using src.Liquids;
@@ -9,33 +8,30 @@ namespace src
 {
     public class WaterManager : MonoBehaviour
     {
+        private Camera _camera;
         [SerializeField] private GameObject cubePrefab;
+        private readonly List<GameObject> objs = new List<GameObject>();
 
-        private WaterData waterData;
-        private List<GameObject> objs = new List<GameObject>();
         private void Start()
         {
-            if (cubePrefab == null)
-            {
-                throw new NullReferenceException();
-            }
+            if (cubePrefab == null) throw new NullReferenceException();
 
+            _camera = Camera.main;
             {
-                float height = 5f;
+                var height = 5f;
                 var water = new GameObject("Screen water");
-                float K = 0.01f;
-  
-                var halfheight = Camera.main.orthographicSize;
-                var halfWidth = halfheight * Screen.width / Screen.height;
+                var K = 0.01f;
 
-                float width = halfWidth * 2;
+                var halfHeight = _camera.orthographicSize;
+                var halfWidth = halfHeight * Screen.width / Screen.height;
+
+                var width = halfWidth * 2;
 
 
                 var waterData = new WaterData(width, height, K);
                 Factory<Water>.CreateInstance(water, waterData);
                 water.transform.position = new Vector3(0, -2.5f);
             }
-            
         }
 
         private void Update()
@@ -43,7 +39,7 @@ namespace src
             if (Input.GetKeyDown(KeyCode.Mouse0))
             {
                 var obj = Instantiate(cubePrefab);
-                var position = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                var position = _camera.ScreenToWorldPoint(Input.mousePosition);
                 position = new Vector3(position.x, position.y, 5);
                 obj.transform.position = position;
                 objs.Add(obj);
