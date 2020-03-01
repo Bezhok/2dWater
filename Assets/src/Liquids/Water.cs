@@ -38,34 +38,44 @@ namespace src.Liquids
         private void OnTriggerEnter2D(Collider2D other)
         {
             var rigidbody = other.GetComponent<Rigidbody2D>();
-            if (rigidbody != null)
-            {
-                var transformPosition = rigidbody.transform.position;
-                var localScale = rigidbody.transform.localScale;
+            if (rigidbody == null) return;
+            
+            CreateSplash(rigidbody);
+        }
 
-                float bottomY = transformPosition.y - localScale.y / 2;
-                float bottomX = transformPosition.x;
+        private void CreateSplash(Rigidbody2D rigidbody)
+        {
+            var transformPosition = rigidbody.transform.position;
+            var localScale = rigidbody.transform.localScale;
 
-                float velocityY = rigidbody.velocity.y;
-                var splashobj = Instantiate(splashPrefab);
-                splashobj.transform.position = new Vector3(bottomX, bottomY-Mathf.Abs(velocityY)*0.04f*transform.localScale.y, 10);
-                
-                var particles = splashobj.GetComponent<ParticleSystem>();
-                particles.transform.localScale = transform.localScale;
-                float lifetime = 1f + Mathf.Abs(velocityY)*0.09f;
-                
-                ParticleSystem.MainModule main = particles.main;
-                main.startSpeed = 2 + Mathf.Abs(velocityY)*0.5f;
-                main.startLifetime = lifetime;
-                var particlesEmission = particles.emission;
-                int particleCount = (int)Mathf.Abs(velocityY) * 2;
-                particlesEmission.SetBurst(0, new ParticleSystem.Burst(0, particleCount, 1, 0.01f));
-//                particlesEmission.rateOverTime = 2 + Mathf.Abs(velocityY)*2;
-                
-                
-                particles.Play();
-                Destroy(splashobj, lifetime);
-            }
+            float velocityY = rigidbody.velocity.y;
+            Vector2 splashPos = transformPosition;
+            splashPos.y -= localScale.y * 0.5f + Mathf.Abs(velocityY)*0.04f*transform.localScale.y;
+            
+            var splashobj = Instantiate(splashPrefab);
+            splashobj.transform.position = new Vector3(splashPos.x, splashPos.y, 10);
+
+            float lifetime = 1f + Mathf.Abs(velocityY)*0.09f;
+            
+            var particles = CreateParticles(splashobj, velocityY, lifetime);
+
+            particles.Play();
+            Destroy(splashobj, lifetime);
+        }
+
+        private ParticleSystem CreateParticles(GameObject splashobj, float velocityY, float lifetime)
+        {
+            var particles = splashobj.GetComponent<ParticleSystem>();
+            particles.transform.localScale = transform.localScale;
+
+            ParticleSystem.MainModule main = particles.main;
+            main.startSpeed = 2 + Mathf.Abs(velocityY)*0.5f;
+            main.startLifetime = lifetime;
+            var particlesEmission = particles.emission;
+            int particleCount = (int)Mathf.Abs(velocityY) * 2;
+            particlesEmission.SetBurst(0, new ParticleSystem.Burst(0, particleCount, 1, 0.01f));
+
+            return particles;
         }
     }
 }

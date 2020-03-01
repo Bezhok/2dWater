@@ -29,101 +29,105 @@ namespace src.Liquids
             _rectCollider2D.size = new Vector2(_waterData.Width, _waterData.Height);
         }
 
+        private Vector2Int ObjPosToArrayIdxs(Transform objTransform)
+        {
+            var transformPosition = objTransform.position;
+            var localScale = objTransform.localScale;
+            float start = transformPosition.x - localScale.x / 2;
+            float end = transformPosition.x + localScale.x / 2;
+
+            float globalStartPosX = transform.TransformPoint(_waterData.WaterSprings[0].Position).x;
+            float globalScaleX = _waterData.Step * transform.localScale.x;
+
+            int startI = Math.Max(0, (int) ((start - globalStartPosX) / globalScaleX));
+            int endI = Math.Min(_waterData.WaterSprings.Length - 1,
+                (int) ((end - globalStartPosX) / globalScaleX));
+            
+            return new Vector2Int(startI, endI);
+        }
+
+        private void ApplyForce(Rigidbody2D rigidbody, Collider2D other)
+        {
+            Vector2Int range = ObjPosToArrayIdxs(other.transform);
+            // todo update collider points or interpolate
+            float velocityY = rigidbody.velocity.y * rigidbody.mass / 20f;
+            for (int j = range.x; j < range.y; j++)
+            {
+                SetVelocity(j, velocityY);
+            }
+            
+            var rigidbodyVelocity = rigidbody.velocity;
+            
+            rigidbodyVelocity = new Vector2(rigidbodyVelocity.x, rigidbodyVelocity.y/1.18f);
+            rigidbody.velocity = rigidbodyVelocity;
+        }
+        
         private void OnTriggerEnter2D(Collider2D other)
         {
             var rigidbody = other.GetComponent<Rigidbody2D>();
-            if (rigidbody != null)
-            {
-                if (other.IsTouching(_edgeCollider2D))
-                {
-                    var transformPosition = rigidbody.transform.position;
-                    var localScale = rigidbody.transform.localScale;
-                    float start = transformPosition.x - localScale.x / 2;
-                    float end = transformPosition.x + localScale.x / 2;
+            if (rigidbody == null) return;
+            if (!other.IsTouching(_edgeCollider2D)) return;
 
-                    float globalStartPosX = transform.TransformPoint(_waterData.WaterSprings[0].Position).x;
-                    float globalScaleX = _waterData.Step * transform.localScale.x;
-
-                    int startI = Math.Max(0, (int) ((start - globalStartPosX) / globalScaleX));
-                    int endI = Math.Min(_waterData.WaterSprings.Length - 1,
-                        (int) ((end - globalStartPosX) / globalScaleX));
-
-                    // todo update collider points or interpolate
-                    float velocityY = rigidbody.velocity.y * rigidbody.mass / 20f;
-                    for (int j = startI; j < endI; j++)
-                    {
-                        SetVelocity(j, velocityY);
-                    }
-                    
-                    var rigidbodyVelocity = rigidbody.velocity;
-                    
-                    rigidbodyVelocity = new Vector2(rigidbodyVelocity.x, rigidbodyVelocity.y/1.18f);
-                    rigidbody.velocity = rigidbodyVelocity;
-                }
-
-                if (other.IsTouching(_rectCollider2D))
-                {
-                    
-                }
-            }
+            ApplyForce(rigidbody, other);
         }
 
+        private void ControlAscent(Rigidbody2D rigidbody)
+        {
+            var rigidbodyVelocity = rigidbody.velocity;
+            var x = rigidbodyVelocity.x/2;
+            float archimedesForce = 10.8f / rigidbody.mass * Time.deltaTime;
+            float resistance = rigidbodyVelocity.y * 0.01f;
+
+            float waterTop = transform.position.y + _waterData.Top;
+            float deadZoneLen = 0.05f;
+
+            
+            var rigidbodyPos = rigidbody.transform.position;
+            bool isAboveWaterLine = rigidbodyPos.y >= waterTop + deadZoneLen;
+            bool isInDeadZone = rigidbodyPos.y < waterTop + deadZoneLen &&
+                                rigidbodyPos.y > waterTop - deadZoneLen;
+            //todo local to world position
+            if (isAboveWaterLine)
+            {
+                if (Mathf.Abs(rigidbodyVelocity.y) > 0.18f)
+                {
+                    rigidbodyVelocity = new Vector2(x,
+                        rigidbodyVelocity.y + archimedesForce / 4);
+                    rigidbodyVelocity = new Vector2(x, rigidbodyVelocity.y / 1.05f);
+                }
+                else
+                {
+                    rigidbodyVelocity = new Vector2(x, 0);   
+                }
+            } 
+            else if (isInDeadZone)
+            {
+                if (Mathf.Abs(rigidbodyVelocity.y) < 0.18f)
+                {
+                    rigidbodyVelocity = new Vector2(x, 0);
+                    rigidbody.Sleep();
+                }
+                else
+                {
+                    rigidbodyVelocity = new Vector2(x,
+                        rigidbodyVelocity.y + archimedesForce / 2);
+                    rigidbodyVelocity = new Vector2(x, rigidbodyVelocity.y / 1.05f);
+                }
+            }
+            else
+            {
+                rigidbodyVelocity = new Vector2(x, rigidbodyVelocity.y + archimedesForce - resistance);
+            }
+                
+            rigidbody.velocity = rigidbodyVelocity;
+        }
         private void OnTriggerStay2D(Collider2D other)
         {
             var rigidbody = other.GetComponent<Rigidbody2D>();
-            if (rigidbody != null)
-            {
-                if (other.IsTouching(_edgeCollider2D))
-                {
-                    
-                }
-
-                var rigidbodyVelocity = rigidbody.velocity;
-                if (other.IsTouching(_rectCollider2D))
-                {
-                    var x = rigidbodyVelocity.x/2;
-                    float archimedesForce = 10.8f / rigidbody.mass * Time.deltaTime;
-                    float resistance = rigidbodyVelocity.y * 0.01f;
-
-                    float waterTop = gameObject.transform.position.y + _waterData.Top;
-                    float deadZoneLen = 0.05f;
-                    
-                    //todo local to world position
-                    if (rigidbody.transform.position.y >= waterTop + deadZoneLen)
-                    {
-                        if (Mathf.Abs(rigidbodyVelocity.y) > 0.18f)
-                        {
-                            rigidbodyVelocity = new Vector2(x,
-                                rigidbodyVelocity.y + archimedesForce / 4);
-                            rigidbodyVelocity = new Vector2(x, rigidbodyVelocity.y / 1.05f);
-                        }
-                        else
-                        {
-                            rigidbodyVelocity = new Vector2(x, 0);   
-                        }
-                    } else if (rigidbody.transform.position.y < waterTop + deadZoneLen && 
-                               rigidbody.transform.position.y > waterTop - deadZoneLen)
-                    {
-                        if (Mathf.Abs(rigidbodyVelocity.y) < 0.18f)
-                        {
-                            rigidbodyVelocity = new Vector2(x, 0);
-                            rigidbody.Sleep();
-                        }
-                        else
-                        {
-                            rigidbodyVelocity = new Vector2(x,
-                                rigidbodyVelocity.y + archimedesForce / 2);
-                            rigidbodyVelocity = new Vector2(x, rigidbodyVelocity.y / 1.05f);
-                        }
-                    }
-                    else
-                    {
-                        rigidbodyVelocity = new Vector2(x, rigidbodyVelocity.y + archimedesForce - resistance);
-                    }
-                    
-                    rigidbody.velocity = rigidbodyVelocity;
-                }
-            }
+            if (rigidbody == null) return;
+            if (!other.IsTouching(_rectCollider2D)) return;
+            
+            ControlAscent(rigidbody);
         }
 
         public void SetVelocity(int i, float velocity)
@@ -133,76 +137,38 @@ namespace src.Liquids
 
         public void UpdatePhys()
         {
-            float scaller = 1;//3;
-
             for (int k = 0; k < 4; ++k)
             {
-                for (int i = 0; i < _waterData.SpringNum; i++)
-                {
-                    _waterData.WaterSprings[i].Update(0.5f * scaller, _waterData.Top, _waterData.K);
-                }
-
-                for (int i = 0; i < _waterData.SpringNum; i++)
-                {
-                    float koeff = scaller * 0.09f / 10f / _waterData.Step;
-                    if (i > 0)
-                    {
-                        float leftDelta = koeff * (_waterData.WaterSprings[i].Position.y -
-                                                   _waterData.WaterSprings[i - 1].Position.y);
-                        _waterData.WaterSprings[i - 1].VelocityY += leftDelta;
-                    }
-
-                    if (i < _waterData.SpringNum - 1)
-                    {
-                        float rightDelta = koeff * (_waterData.WaterSprings[i].Position.y -
-                                                    _waterData.WaterSprings[i + 1].Position.y);
-                        _waterData.WaterSprings[i + 1].VelocityY += rightDelta;
-                    }
-                }
+                UpdateSpringsPhys();
+                InterpolateVelocity();
             }
         }
 
-        public void UpdatePhysExperimental()
+        private void UpdateSpringsPhys()
         {
             for (int i = 0; i < _waterData.SpringNum; i++)
             {
                 _waterData.WaterSprings[i].Update(0.5f, _waterData.Top, _waterData.K);
             }
+        }
 
-            float[] leftDeltas = new float[_waterData.SpringNum];
-            float[] rightDeltas = new float[_waterData.SpringNum];
-
-            for (int k = 0; k < 6; k++)
+        private void InterpolateVelocity()
+        {
+            for (int i = 0; i < _waterData.SpringNum; i++)
             {
-                for (int i = 0; i < _waterData.SpringNum; i++)
+                float koeff =  0.009f / _waterData.Step;
+                if (i > 0)
                 {
-                    float koeff = 0.005f;
-                    if (i > 0)
-                    {
-                        leftDeltas[i] = koeff * (_waterData.WaterSprings[i].Position.y -
-                                                 _waterData.WaterSprings[i - 1].Position.y);
-                        _waterData.WaterSprings[i - 1].VelocityY += leftDeltas[i];
-                    }
-
-                    if (i < _waterData.SpringNum - 1)
-                    {
-                        rightDeltas[i] = koeff * (_waterData.WaterSprings[i].Position.y -
-                                                  _waterData.WaterSprings[i + 1].Position.y);
-                        _waterData.WaterSprings[i + 1].VelocityY += rightDeltas[i];
-                    }
+                    float leftDelta = koeff * (_waterData.WaterSprings[i].Position.y -
+                                               _waterData.WaterSprings[i - 1].Position.y);
+                    _waterData.WaterSprings[i - 1].VelocityY += leftDelta;
                 }
 
-                for (int i = 0; i < _waterData.SpringNum; i++)
+                if (i < _waterData.SpringNum - 1)
                 {
-                    if (i > 0)
-                    {
-                        _waterData.WaterSprings[i - 1].Position += new Vector3(0, leftDeltas[i]);
-                    }
-
-                    if (i < _waterData.SpringNum - 1)
-                    {
-                        _waterData.WaterSprings[i + 1].Position += new Vector3(0, leftDeltas[i]);
-                    }
+                    float rightDelta = koeff * (_waterData.WaterSprings[i].Position.y -
+                                                _waterData.WaterSprings[i + 1].Position.y);
+                    _waterData.WaterSprings[i + 1].VelocityY += rightDelta;
                 }
             }
         }

@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="dd8ba273-a149-4543-966b-caea37ad2bdf" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.2dWater/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Liquids/Water.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Liquids/Water.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Liquids/WaterData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Liquids/WaterData.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/src/Liquids/WaterInteraction.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Liquids/WaterInteraction.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/QualitySettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/src/Liquids/WaterMesh.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/src/Liquids/WaterMesh.cs" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -58,11 +59,11 @@
         <option value="$PROJECT_DIR$/Assets/src/FactoryPattern/Factory.cs" />
         <option value="$PROJECT_DIR$/Assets/Resources/ColorShader.shader" />
         <option value="$PROJECT_DIR$/Assets/Plugins/colorShader/Standard_VC.shader" />
-        <option value="$PROJECT_DIR$/Assets/src/Liquids/WaterMesh.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Liquids/WaterData.cs" />
         <option value="$PROJECT_DIR$/Assets/src/WaterManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/src/Liquids/WaterInteraction.cs" />
         <option value="$PROJECT_DIR$/Assets/src/Liquids/Water.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Liquids/WaterData.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Liquids/WaterInteraction.cs" />
+        <option value="$PROJECT_DIR$/Assets/src/Liquids/WaterMesh.cs" />
       </list>
     </option>
   </component>
@@ -128,7 +129,8 @@
       <workItem from="1576087952293" duration="5268000" />
       <workItem from="1576338929346" duration="2356000" />
       <workItem from="1577175786982" duration="599000" />
-      <workItem from="1580118206607" duration="715000" />
+      <workItem from="1580118206607" duration="769000" />
+      <workItem from="1583085599745" duration="3294000" />
     </task>
     <servers />
   </component>

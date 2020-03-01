@@ -26,11 +26,13 @@ namespace src.Liquids
             {
                 var pos = _waterData.WaterSprings[springIdx].Position;
                 vertices[vertIdx] = pos;
+                
                 pos.y = _waterData.Bottom;
                 vertices[vertIdx + 1] = pos;
 
                 pos = _waterData.WaterSprings[springIdx + 1].Position;
                 vertices[vertIdx + 2] = pos;
+                
                 pos.y = _waterData.Bottom;
                 vertices[vertIdx + 3] = pos;
             }
@@ -54,11 +56,13 @@ namespace src.Liquids
             {
                 var pos = _waterData.WaterSprings[springIdx].Position;
                 vertices[vertIdx] = pos;
+                
                 pos.y = _waterData.Bottom;
                 vertices[vertIdx + 1] = pos;
 
                 pos = _waterData.WaterSprings[springIdx + 1].Position;
                 vertices[vertIdx + 2] = pos;
+                
                 pos.y = _waterData.Bottom;
                 vertices[vertIdx + 3] = pos;
 

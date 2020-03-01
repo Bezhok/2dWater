@@ -29,7 +29,7 @@ namespace src.Liquids
         public float Bottom { get; set; }
         public float Left { get; set; }
         public float Step { get; set; }
-        public float K;// { get; set; }
+        public float K;
         public int SpringNum { get; set; }
         public WaterSpring[] WaterSprings { get; set; }
     }
