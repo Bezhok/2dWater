@@ -33,16 +33,16 @@ namespace src.Liquids
 
         private Vector2Int ObjPosToArrayIdxs(Transform objTransform)
         {
-            var transformPosition = objTransform.position;
-            var localScale = objTransform.localScale;
-            var start = transformPosition.x - localScale.x / 2;
-            var end = transformPosition.x + localScale.x / 2;
+            Vector3 transformPosition = objTransform.position;
+            Vector3 localScale = objTransform.localScale;
+            float start = transformPosition.x - localScale.x / 2;
+            float end = transformPosition.x + localScale.x / 2;
 
-            var globalStartPosX = _transform.TransformPoint(_waterData.WaterSprings[0].position).x;
-            var globalScaleX = _waterData.Step * _transform.localScale.x;
+            float globalStartPosX = _transform.TransformPoint(_waterData.WaterSprings[0].position).x;
+            float globalScaleX = _waterData.Step * _transform.localScale.x;
 
-            var startI = Math.Max(0, (int) ((start - globalStartPosX) / globalScaleX));
-            var endI = Math.Min(_waterData.WaterSprings.Length - 1,
+            int startI = Math.Max(0, (int) ((start - globalStartPosX) / globalScaleX));
+            int endI = Math.Min(_waterData.WaterSprings.Length - 1,
                 (int) ((end - globalStartPosX) / globalScaleX));
 
             return new Vector2Int(startI, endI);
@@ -50,12 +50,12 @@ namespace src.Liquids
 
         private void ApplyForce(Rigidbody2D otherRigidbody, Collider2D other)
         {
-            var range = ObjPosToArrayIdxs(other.transform);
+            Vector2Int range = ObjPosToArrayIdxs(other.transform);
             // todo update collider points or interpolate
-            var velocityY = otherRigidbody.velocity.y * otherRigidbody.mass / 20f;
-            for (var j = range.x; j < range.y; j++) SetVelocity(j, velocityY);
+            float velocityY = otherRigidbody.velocity.y * otherRigidbody.mass / 20f;
+            for (int j = range.x; j < range.y; j++) SetVelocity(j, velocityY);
 
-            var rigidbodyVelocity = otherRigidbody.velocity;
+            Vector2 rigidbodyVelocity = otherRigidbody.velocity;
 
             rigidbodyVelocity = new Vector2(rigidbodyVelocity.x, rigidbodyVelocity.y / 1.18f);
             otherRigidbody.velocity = rigidbodyVelocity;
@@ -72,19 +72,19 @@ namespace src.Liquids
 
         private void ControlAscent(Rigidbody2D otherRigidbody)
         {
-            var rigidbodyVelocity = otherRigidbody.velocity;
-            var x = rigidbodyVelocity.x / 2;
-            var archimedesForce = 10.8f / otherRigidbody.mass * Time.deltaTime;
-            var resistance = rigidbodyVelocity.y * 0.01f;
+            Vector2 rigidbodyVelocity = otherRigidbody.velocity;
+            float x = rigidbodyVelocity.x / 2;
+            float archimedesForce = 10.8f / otherRigidbody.mass * Time.deltaTime;
+            float resistance = rigidbodyVelocity.y * 0.01f;
 
-            var waterTop = _transform.position.y + _waterData.Top;
-            var deadZoneLen = 0.05f;
+            float waterTop = _transform.position.y + _waterData.Top;
+            float deadZoneLen = 0.05f;
 
 
-            var rigidbodyPos = otherRigidbody.transform.position;
-            var isAboveWaterLine = rigidbodyPos.y >= waterTop + deadZoneLen;
-            var isInDeadZone = rigidbodyPos.y < waterTop + deadZoneLen &&
-                               rigidbodyPos.y > waterTop - deadZoneLen;
+            Vector3 rigidbodyPos = otherRigidbody.transform.position;
+            bool isAboveWaterLine = rigidbodyPos.y >= waterTop + deadZoneLen;
+            bool isInDeadZone = rigidbodyPos.y < waterTop + deadZoneLen &&
+                                rigidbodyPos.y > waterTop - deadZoneLen;
             //todo local to world position
             if (isAboveWaterLine)
             {
@@ -137,7 +137,7 @@ namespace src.Liquids
 
         public void UpdatePhys()
         {
-            for (var k = 0; k < 4; ++k)
+            for (int k = 0; k < 4; ++k)
             {
                 UpdateSpringsPhys();
                 InterpolateVelocity();
@@ -146,26 +146,26 @@ namespace src.Liquids
 
         private void UpdateSpringsPhys()
         {
-            for (var i = 0; i < _waterData.SpringNum; i++)
+            for (int i = 0; i < _waterData.SpringNum; i++)
                 _waterData.WaterSprings[i].Update(0.5f, _waterData.Top, _waterData.K);
         }
 
         private void InterpolateVelocity()
         {
-            for (var i = 0; i < _waterData.SpringNum; i++)
+            for (int i = 0; i < _waterData.SpringNum; i++)
             {
-                var coefficient = 0.009f / _waterData.Step;
+                float coefficient = 0.009f / _waterData.Step;
                 if (i > 0)
                 {
-                    var leftDelta = coefficient * (_waterData.WaterSprings[i].position.y -
-                                                   _waterData.WaterSprings[i - 1].position.y);
+                    float leftDelta = coefficient * (_waterData.WaterSprings[i].position.y -
+                                                     _waterData.WaterSprings[i - 1].position.y);
                     _waterData.WaterSprings[i - 1].VelocityY += leftDelta;
                 }
 
                 if (i < _waterData.SpringNum - 1)
                 {
-                    var rightDelta = coefficient * (_waterData.WaterSprings[i].position.y -
-                                                    _waterData.WaterSprings[i + 1].position.y);
+                    float rightDelta = coefficient * (_waterData.WaterSprings[i].position.y -
+                                                      _waterData.WaterSprings[i + 1].position.y);
                     _waterData.WaterSprings[i + 1].VelocityY += rightDelta;
                 }
             }

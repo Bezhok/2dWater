@@ -14,7 +14,7 @@ namespace src.Liquids
         {
             _waterData = data as WaterData;
             _splashPrefab = Resources.Load<GameObject>("Prefabs\\SplashNew");
-            for (var i = 0; i < _waterData.SpringNum; i++)
+            for (int i = 0; i < _waterData.SpringNum; i++)
             {
                 _waterData.WaterSprings[i] = new WaterSpring();
                 var pos = new Vector3(_waterData.Step * i + _waterData.Left, _waterData.Top);
@@ -45,20 +45,20 @@ namespace src.Liquids
 
         private void CreateSplash(Rigidbody2D otherRigidbody)
         {
-            var transformOther = otherRigidbody.transform;
-            var transformPosition = transformOther.position;
-            var localScale = transformOther.localScale;
+            Transform transformOther = otherRigidbody.transform;
+            Vector3 transformPosition = transformOther.position;
+            Vector3 localScale = transformOther.localScale;
 
-            var velocityY = otherRigidbody.velocity.y;
+            float velocityY = otherRigidbody.velocity.y;
             Vector2 splashPos = transformPosition;
             splashPos.y -= localScale.y * 0.5f + Mathf.Abs(velocityY) * 0.04f * transform.localScale.y;
 
-            var splashobj = Instantiate(_splashPrefab);
+            GameObject splashobj = Instantiate(_splashPrefab);
             splashobj.transform.position = new Vector3(splashPos.x, splashPos.y, 10);
 
-            var lifetime = 1f + Mathf.Abs(velocityY) * 0.09f;
+            float lifetime = 1f + Mathf.Abs(velocityY) * 0.09f;
 
-            var particles = CreateParticles(splashobj, velocityY, lifetime);
+            ParticleSystem particles = CreateParticles(splashobj, velocityY, lifetime);
 
             particles.Play();
             Destroy(splashobj, lifetime);
@@ -69,11 +69,11 @@ namespace src.Liquids
             var particles = splashObj.GetComponent<ParticleSystem>();
             particles.transform.localScale = transform.localScale;
 
-            var main = particles.main;
+            ParticleSystem.MainModule main = particles.main;
             main.startSpeed = 2 + Mathf.Abs(velocityY) * 0.5f;
             main.startLifetime = lifetime;
-            var particlesEmission = particles.emission;
-            var particleCount = (int) Mathf.Abs(velocityY) * 2;
+            ParticleSystem.EmissionModule particlesEmission = particles.emission;
+            int particleCount = (int) Mathf.Abs(velocityY) * 2;
             particlesEmission.SetBurst(0, new ParticleSystem.Burst(0, particleCount, 1, 0.01f));
 
             return particles;

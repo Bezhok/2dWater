@@ -9,8 +9,8 @@ namespace src.Liquids
 
         public void Update(float delta, float baseHeight, float k)
         {
-            var mass = 1.0f;
-            var accelerationY = -k * (position.y - baseHeight) / mass - VelocityY * 0.05f;
+            float mass = 1.0f;
+            float accelerationY = -k * (position.y - baseHeight) / mass - VelocityY * 0.05f;
             position.y += delta * VelocityY;
             VelocityY += delta * accelerationY;
         }
